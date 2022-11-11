@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int
+main ()
+{
+  int num = 7;
+  int count = 0;
+  for (int i = 1; i <= num; i++)
+    {
+      if (num % i == 0)
+	{
+	  count += 1;
+	}
+    }
+  (count > 2) ? printf ("Not a Prime") : printf ("Prime Number");
+
+}
+
+*******************************************************************************/
+//Prime Numbers b/w ranges
+
+#include <stdio.h>
+
+int
+checkPrime (int num)
+{
+  if (num < 2)
+    return 0;
+  else
+    {
+      int x = num / 2;
+      for (int i = 2; i < x; i++)
+	{
+	  if (num % i == 0)
+	    {
+	      return 0;
+	    }
+	}
+    }
+  return 1;
+}
+
+int
+main ()
+{
+  int n1 = 2;
+  int n2 = 30;
+  for (int i = n1; i <= n2; i++)
+    {
+      if (checkPrime (i))
+	{
+	  printf ("%d ", i);
+	}
+    }
+}

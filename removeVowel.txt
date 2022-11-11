@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main ()
+{
+    int checkVowel(char c)
+    {
+        if(c=='A' || c=='E' || c=='I'|| c=='O'|| c=='U'||
+        c=='a' || c=='e' || c=='i'|| c=='o'|| c=='u')
+        {
+            return 1;
+        }
+        return 0;
+    }
+    
+    char in[30],out[30];
+    int d;
+    printf("Enter String: ");
+    scanf("%s",in);
+    int n=strlen(in);
+    for(int i=0;i<n;i++)
+    {
+        if(checkVowel(in[i])==0)
+        {
+            out[d]=in[i];
+            d++;
+        }
+        out[d]='\0';
+    }
+    printf("%s",out);
+}

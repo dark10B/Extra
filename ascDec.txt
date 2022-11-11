@@ -1,0 +1,81 @@
+#include<stdio.h>
+
+int
+main ()
+{
+  int ascDec (int arr[], int len)
+  {
+    int temp;
+    for (int i = 0; i < len; i++)
+      {
+          for (int j=i;j<len;j++)
+          {
+              if (arr[i] > arr[j])
+	            {
+	                temp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = temp;
+	            }
+          }
+      }
+
+    for (int i = 0; i < len/2; i++)
+      {
+          printf ("%d ", arr[i]);
+      }
+       for (int i = len-1; i >= len/2; i--)
+      {
+          printf ("%d ", arr[i]);
+      }
+  }
+
+  int arr[] = { 3, 2, 4, 1, 10, 30, 40, 20 };
+  int len = sizeof (arr) / sizeof (arr[0]);
+  ascDec (arr, len);
+}
+
+*******************************************************************************/
+#include<stdio.h>
+
+int
+main ()
+{
+  int ascDec (int arr[], int len)
+  {
+    int temp;
+    for (int i = 0; i < len/2; i++)
+      {
+          for (int j=i;j<len/2;j++)
+          {
+              if (arr[i] > arr[j])
+	            {
+	                temp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = temp;
+	            }
+          }
+      }
+      for (int i = len/2; i < len; i++)
+      {
+          for (int j=i;j<len;j++)
+          {
+              if (arr[i] < arr[j])
+	            {
+	                temp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = temp;
+	            }
+          }
+      }
+
+    for (int i = 0; i < len; i++)
+      {
+          printf ("%d ", arr[i]);
+      }
+      
+  }
+
+  int arr[] = { 3, 2, 4, 1, 10, 30, 40, 20 };
+  int len = sizeof (arr) / sizeof (arr[0]);
+  ascDec (arr, len);
+}

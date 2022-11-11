@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+/*
+num %10---->Gives us last digit
+num/10----->Reduces Number by 1
+*/
+
+
+main ()
+{
+  int num;
+  printf ("Enter Number: \n");
+  scanf ("%d", &num);
+  int sum = 0;
+  int n1=num;
+  while (num != 0)
+    {
+      sum = sum + num % 10;
+      num = num / 10;
+    }
+  //sum=(num*(num+1))/2;
+  printf ("Sum = %d\n", sum);
+
+  int lastDigit;
+  int reverse = 0;
+  while (n1 != 0)
+    {
+      lastDigit = n1 % 10;
+      reverse = reverse * 10 + lastDigit;
+      n1 = n1 / 10;
+    }
+  printf ("Reverse = %d", reverse);
+}
